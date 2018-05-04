@@ -162,7 +162,7 @@ public abstract class BaseExample implements IExample{
 	/**
 	 * 添加in查询所需字段方法 类似 infield  in （value1,value2,value3...）
 	 * @param infield 字段名
-	 * @return
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample addInField(String infield){
 		if(this.inFields == null || this.inFields.size() == 0){
@@ -180,7 +180,7 @@ public abstract class BaseExample implements IExample{
 	 * 			类似：  field  like  "%likeValue%"
 	 * @param field 字段名
 	 * @param likeValue 包含值
-	 * @return
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample like(String field, String likeValue){
 		if(this.likeFields == null || this.likeFields.size() == 0){
@@ -197,7 +197,9 @@ public abstract class BaseExample implements IExample{
 
 	/**
 	 * 相等的where条件
-	 * @return
+	 * @param field 字段名
+	 * @param value 值
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample equalsWhere(String field,Object value){
 		if(this.equalsWhereKey == null){
@@ -211,7 +213,9 @@ public abstract class BaseExample implements IExample{
 	
 	/**
 	 * 大于的where条件
-	 * @return
+	 * @param field 字段名
+	 * @param value 值
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample greaterThanWhere(String field,Object value){
 		if(this.greaterThanWhereKey == null){
@@ -225,7 +229,9 @@ public abstract class BaseExample implements IExample{
 	
 	/**
 	 * 小于的where条件
-	 * @return
+	 * @param field 字段名
+	 * @param value 值
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample lessThanWhere(String field,Object value){
 		if(this.lessThanWhereKey == null){
@@ -239,7 +245,9 @@ public abstract class BaseExample implements IExample{
 	
 	/**
 	 * 不等于的where条件
-	 * @return
+	 * @param field 字段名
+	 * @param value 值
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample notEqualsWhere(String field,Object value){
 		if(this.notEqualsWhereKey == null){
@@ -266,7 +274,8 @@ public abstract class BaseExample implements IExample{
 	/**
 	 * 增加别名和表名的映射关系
 	 * @param alias 别名
-	 * @return
+	 * @param tableName 表名
+	 * @return 返回BaseExample对象
 	 */
 	public BaseExample addAlias(String alias,String tableName){
 		if(this.tableAlias == null){

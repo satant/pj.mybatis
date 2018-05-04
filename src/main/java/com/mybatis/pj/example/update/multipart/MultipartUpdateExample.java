@@ -14,7 +14,7 @@ public class MultipartUpdateExample extends UpdateBaseExample  {
 		super(tableName);
 	}
 
-
+	
 	@Override
 	public MultipartUpdateExample addUpdateField(String field, Object newValue) {
 		super.addUpdateField(field, newValue);
@@ -24,7 +24,7 @@ public class MultipartUpdateExample extends UpdateBaseExample  {
 
 	/**
 	 * 开始查询前结束时调用的检查方法
-	 * @throws ExampleException
+	 * @throws ExampleException 异常
 	 */
 	@Override
 	public void end() throws ExampleException {

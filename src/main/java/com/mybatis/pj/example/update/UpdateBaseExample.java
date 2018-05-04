@@ -19,7 +19,7 @@ public class UpdateBaseExample extends BaseExample {
 
     /**
      *
-     * @throws ExampleException
+     * @throws ExampleException 异常
      */
     @Override
     public void end() throws ExampleException {
@@ -38,7 +38,7 @@ public class UpdateBaseExample extends BaseExample {
      * 增加字段方法  类似于sql语句的   set   field   =  newValue
      * @param field  字段名
      * @param newValue   新值
-     * @return
+     * @return UpdateBaseExample对象
      */
     public UpdateBaseExample addUpdateField(String field,Object newValue) {
         if(this.updateFields == null) {

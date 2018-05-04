@@ -18,7 +18,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 判断是否含有更新字段
-	 * @return
+	 * @param parameter  传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useUpdateField(Object parameter) {
 		if(parameter != null && parameter instanceof UpdateBaseExample) {
@@ -34,7 +35,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 判断是否使用多功能查询和左连接查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useMultipartAndLeftJoin(Object parameter) {
 		if(parameter != null && parameter instanceof MultipartSelectExample) {
@@ -48,7 +50,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 判断是否使用别名
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useAlias(Object parameter) {
 		if(parameter != null) {
@@ -63,7 +66,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 使用了where查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useWhere(Object parameter) {
 		if(parameter != null) {
@@ -77,7 +81,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 没有使用where查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean notUseWhere(Object parameter) {
 		if(parameter != null) {
@@ -92,7 +97,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了大于，小于或者不等于查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useGreaterAndLess(Object parameter) {
 		if(parameter != null) {
@@ -109,7 +115,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了小于或者不等于查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useLessAndNotEquals(Object parameter) {
 		if(parameter != null) {
@@ -125,7 +132,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了等号查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 *  @return  boolean
 	 */
 	public static boolean useEqualsWhere(Object parameter) {
 		if(parameter != null) {
@@ -140,7 +148,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了大于查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useGreaterThanWhere(Object parameter) {
 		if(parameter != null) {
@@ -155,7 +164,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了小于查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */ 
 	public static boolean useLessThanWhere(Object parameter) {
 		if(parameter != null) {
@@ -170,7 +180,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了不等于查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */ 
 	public static boolean useNotEqualsWhere(Object parameter) {
 		if(parameter != null) {
@@ -185,7 +196,8 @@ public class ExampleOGNL {
 
 	/**
 	 * 使用了in查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useIn(Object parameter) {
 		if(parameter != null) {
@@ -200,7 +212,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 使用了like查询
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useLike(Object parameter) {
 		if(parameter != null) {
@@ -216,7 +229,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了分组
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useGroupBy(Object parameter) {
 		if(parameter != null) {
@@ -231,7 +245,8 @@ public class ExampleOGNL {
 	
 	/**
 	 * 是否使用了排序
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean useOrderBy(Object parameter) {
 		if(parameter != null) {
@@ -245,7 +260,8 @@ public class ExampleOGNL {
 	}
 	/**
 	 * 是否是desc排序
-	 * @param parameter 查询参数
+	 * @param parameter 传入对象(BaseExample的子类)
+	 * @return  boolean
 	 */
 	public static boolean orderByDesc(String key,Object parameter) {
 		if(parameter != null) {

@@ -4,7 +4,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 查询指定列和获取表名
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String getColumn() {
 		return  "<foreach collection=\"_parameter.fields\" index=\"index\" item=\"item\" separator=\",\">\r\n" + 
@@ -15,7 +15,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 查询指定更新列和获取表名
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String getUpdateColumn() {
 		return  "${tableName[0]} SET\r\n" + 
@@ -29,7 +29,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用别名,有的话则获取第一个别名
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String isUseAlias() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useAlias(_parameter) \">\r\n" + 
@@ -39,6 +39,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用了左连接查询
+	 * * @return 对应sql片段
 	 */
 	public static String isUseLeftJoin() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useMultipartAndLeftJoin(_parameter)\">\r\n" + 
@@ -54,7 +55,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用了查询和是否使用了等号查询
-	 * @return
+	* @return 对应sql片段
 	 */
 	public static String useWhereAndEqualsWhere() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useWhere(_parameter)\">\r\n" + 
@@ -72,7 +73,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用了大于查询
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String useGreaterThan() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useGreaterThanWhere(_parameter)\">\r\n" + 
@@ -87,7 +88,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用了小于查询
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String useLessThan() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useLessThanWhere(_parameter)\">\r\n" + 
@@ -102,7 +103,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用了不等于查询
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String useNotEquals() {
 		return "<if test =\"@com.example.test.util.ExampleOGNL@useNotEqualsWhere(_parameter)\">\r\n" + 
@@ -116,7 +117,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 判断是否使用了查询
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String notUseWhere() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@notUseWhere(_parameter)\">\r\n" + 
@@ -166,7 +167,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用group by
-	 * @return
+	 * @return 对应sql片段
 	 */
 	public static String useGroup() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useGroupBy(_parameter) \">\r\n" + 
@@ -176,6 +177,7 @@ public class MyExampleSqlHelp {
 	
 	/**
 	 * 是否使用 order by
+	 * @return 对应sql片段
 	 */
 	public static String useOrder() {
 		return "<if test=\"@com.example.test.util.ExampleOGNL@useOrderBy(_parameter)\">\r\n" + 

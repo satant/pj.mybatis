@@ -19,7 +19,6 @@ public class SelectBaseExample extends BaseExample {
     //此处的fields一般是表字段名的集合，但是在特殊的情况下，例如求和时可以是   sum(字段名)
     private List<String> fields;
 
-
     public SelectBaseExample(String tableName,String alias, Map<String, Object> orderBy, String groupBy) {
     	super.setUseMultipart(false);
         super.addTableName(tableName);
@@ -40,7 +39,7 @@ public class SelectBaseExample extends BaseExample {
 
     /**
      * 表示查询语句结束，进行检查的方法
-     * @throws ExampleException
+     * @throws ExampleException 异常
      */
     @Override
     public void end() throws ExampleException {
@@ -56,7 +55,7 @@ public class SelectBaseExample extends BaseExample {
     /**
      * 添加返回结果的字段   类似于(select field,field,field )
      * @param field 要添加的字段
-     * @return
+     * @return SelectBaseExample对象
      */
     public SelectBaseExample addField(String field){
         if(this.fields == null){
@@ -69,7 +68,7 @@ public class SelectBaseExample extends BaseExample {
     /**
      * 添加返回结果的字段   类似于(select field,field,field )
      * @param fields 要添加的字段list集合
-     * @return
+     * @return SelectBaseExample对象
      */
     public SelectBaseExample addField(List fields){
         if(this.fields == null){
@@ -84,7 +83,7 @@ public class SelectBaseExample extends BaseExample {
      * 对SQL语句添加排序
      * @param field 要排序的字段名
      * @param orderType 使用ExampleConstants这个常量类
-     * @return
+     * @return SelectBaseExample对象
      */
     public SelectBaseExample orderBy(String field,String orderType){
         if(this.order == null) {
@@ -97,7 +96,7 @@ public class SelectBaseExample extends BaseExample {
     /**
      * 对SQL语句添加分组
      * @param field 要分组的字段名
-     * @return
+     * @return SelectBaseExample 对象
      */
     public SelectBaseExample groupBy(String field){
         this.groupBy = field;
