@@ -19,7 +19,7 @@ public class MyExampleSqlHelp {
 	 */
 	public static String getUpdateColumn() {
 		return  "${tableName[0]} SET\r\n" + 
-				"		<if test=\"@com.example.test.util.ExampleOGNL@useUpdateField(_parameter)\">\r\n" + 
+				"		<if test=\"@com.mybatis.pj.util.ExampleOGNL@useUpdateField(_parameter)\">\r\n" + 
 				"			<foreach collection=\"updateFields\" item=\"key\" index=\"index\" separator=\",\">\r\n" + 
 				"				${key} = #{updateValue[${index}]}\r\n" + 
 				"			</foreach>\r\n" + 
@@ -32,7 +32,7 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String isUseAlias() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useAlias(_parameter) \">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useAlias(_parameter) \">\r\n" + 
 				"			${tableAlias[0]}\r\n" + 
 				"		</if>";
 	}
@@ -42,7 +42,7 @@ public class MyExampleSqlHelp {
 	 * * @return 对应sql片段
 	 */
 	public static String isUseLeftJoin() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useMultipartAndLeftJoin(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useMultipartAndLeftJoin(_parameter)\">\r\n" + 
 				"			LEFT JOIN\r\n" + 
 				"			<foreach collection=\"tableAlias\" item=\"key\" index=\"index\" separator=\"\">\r\n" + 
 				"				<if test=\"index >= 1\">\r\n" + 
@@ -58,14 +58,14 @@ public class MyExampleSqlHelp {
 	* @return 对应sql片段
 	 */
 	public static String useWhereAndEqualsWhere() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useWhere(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useWhere(_parameter)\">\r\n" + 
 				"			<where>\r\n" + 
-				"				<if test=\"@com.example.test.util.ExampleOGNL@useEqualsWhere(_parameter)\">\r\n" + 
+				"				<if test=\"@com.mybatis.pj.util.ExampleOGNL@useEqualsWhere(_parameter)\">\r\n" + 
 				"					<foreach collection=\"equalsWhereKey\" item=\"key\" index=\"index\" separator=\"AND\"> " + 
 				"						${key} = #{equalsWhereValue[${index}]} " + 
 				"					</foreach>\r\n" + 
 				"\r\n" + 
-				"					<if test=\"@com.example.test.util.ExampleOGNL@useGreaterAndLess(_parameter)\">\r\n" + 
+				"					<if test=\"@com.mybatis.pj.util.ExampleOGNL@useGreaterAndLess(_parameter)\">\r\n" + 
 				"						AND\r\n" + 
 				"					</if>\r\n" + 
 				"				</if>"; 
@@ -76,11 +76,11 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String useGreaterThan() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useGreaterThanWhere(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useGreaterThanWhere(_parameter)\">\r\n" + 
 				"					<foreach collection=\"greaterThanWhereKey\" item=\"key\" index=\"index\" separator=\"AND\"> " + 
 				"						${key} > #{greaterThanWhereValue[${index}]} " + 
 				"					</foreach>\r\n" + 
-				"					<if test=\"@com.example.test.util.ExampleOGNL@useLessAndNotEquals(_parameter)\">\r\n" + 
+				"					<if test=\"@com.mybatis.pj.util.ExampleOGNL@useLessAndNotEquals(_parameter)\">\r\n" + 
 				"						AND\r\n" + 
 				"					</if>\r\n" + 
 				"				</if>"; 
@@ -91,11 +91,11 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String useLessThan() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useLessThanWhere(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useLessThanWhere(_parameter)\">\r\n" + 
 				"					<foreach collection=\"lessThanWhereKey\" item=\"key\" index=\"index\" separator=\"AND\"> " + 
 				"						${key} &lt; #{lessThanWhereValue[${index}]} " + 
 				"					</foreach>\r\n" + 
-				"					<if test=\"@com.example.test.util.ExampleOGNL@useNotEqualsWhere(_parameter)\">\r\n" + 
+				"					<if test=\"@com.mybatis.pj.util.ExampleOGNL@useNotEqualsWhere(_parameter)\">\r\n" + 
 				"						AND\r\n" + 
 				"					</if>\r\n" + 
 				"				</if>";
@@ -106,7 +106,7 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String useNotEquals() {
-		return "<if test =\"@com.example.test.util.ExampleOGNL@useNotEqualsWhere(_parameter)\">\r\n" + 
+		return "<if test =\"@com.mybatis.pj.util.ExampleOGNL@useNotEqualsWhere(_parameter)\">\r\n" + 
 				"					<foreach collection=\"notEqualsWhereKey\" item=\"key\" index=\"index\" separator=\"AND\"> " + 
 				"						${key} != #{notEqualsWhereValue[${index}]}  " + 
 				"					</foreach>\r\n" + 
@@ -120,7 +120,7 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String notUseWhere() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@notUseWhere(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@notUseWhere(_parameter)\">\r\n" + 
 				"			WHERE 1 = 1\r\n" + 
 				"		</if>";
 	}
@@ -130,7 +130,7 @@ public class MyExampleSqlHelp {
 	 * @return
 	 */
 	public static String useIn() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useIn(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useIn(_parameter)\">\r\n" + 
 				"			AND\r\n" + 
 				"			<foreach collection=\"inFields\" item=\"field\" index=\"index\" separator=\"AND\">\r\n" + 
 				"				${field} in\r\n" + 
@@ -155,8 +155,8 @@ public class MyExampleSqlHelp {
 	 * @return
 	 */
 	public static String useLike() {
-		return "<if test=\" @com.example.test.util.ExampleOGNL@useLike(_parameter)\">\r\n" + 
-				"			<if test=\"@com.example.test.util.ExampleOGNL@useIn(_parameter)\">\r\n" + 
+		return "<if test=\" @com.mybatis.pj.util.ExampleOGNL@useLike(_parameter)\">\r\n" + 
+				"			<if test=\"@com.mybatis.pj.util.ExampleOGNL@useIn(_parameter)\">\r\n" + 
 				"				AND\r\n" + 
 				"			</if>\r\n" + 
 				"			<foreach collection=\"likeFields\" item=\"field\" index=\"index\" separator=\"AND\">\r\n" + 
@@ -170,7 +170,7 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String useGroup() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useGroupBy(_parameter) \">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useGroupBy(_parameter) \">\r\n" + 
 				"			GROUP BY ${groupBy}\r\n" + 
 				"		</if>";
 	}
@@ -180,12 +180,12 @@ public class MyExampleSqlHelp {
 	 * @return 对应sql片段
 	 */
 	public static String useOrder() {
-		return "<if test=\"@com.example.test.util.ExampleOGNL@useOrderBy(_parameter)\">\r\n" + 
+		return "<if test=\"@com.mybatis.pj.util.ExampleOGNL@useOrderBy(_parameter)\">\r\n" + 
 				"			order by \r\n" + 
 				"			<foreach collection=\"order.keys\" item=\"key\" index=\"index\" separator=\",\">\r\n" + 
 				"				${key} " + 
 				"				<choose>\r\n" + 
-				"					<when test=\"@com.example.test.util.ExampleOGNL@orderByDesc(key,_parameter)\">\r\n" + 
+				"					<when test=\"@com.mybatis.pj.util.ExampleOGNL@orderByDesc(key,_parameter)\">\r\n" + 
 				"						DESC \r\n" + 
 				"					</when>\r\n" + 
 				"					<otherwise>\r\n" + 
