@@ -23,7 +23,6 @@ public class MyUpdateProvider extends MapperTemplate{
         sql.append(MyExampleSqlHelp.notUseWhere());
         sql.append(MyExampleSqlHelp.useIn());
         sql.append(MyExampleSqlHelp.useLike());
-        System.out.println("方法执行结束后的sql："+sql.toString());
         return sql.toString();
 	}
 	
